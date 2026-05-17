@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Публичная оферта — ReanimaTech</title>
+<meta name="description" content="Публичная оферта. Сервисный центр ReanimaTech, Севастополь.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #1F4FAA;
+    --blue-dark: #122F66;
+    --blue-deep: #0A1838;
+    --orange: #F26522;
+    --orange-soft: #FF8845;
+    --bg: #FAFAF7;
+    --ink: #0A0E1A;
+    --muted: #6B7280;
+    --line: #E5E7EB;
+    --card: #FFFFFF;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Manrope', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+  }
+
+  /* NAV — упрощённый */
+  nav {
+    position: sticky; top: 0;
+    padding: 14px 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(250, 250, 247, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+    z-index: 100;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 12px;
+    text-decoration: none;
+    font-weight: 800; font-size: 18px;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .nav-logo .blue { color: var(--blue); }
+  .nav-logo .orange { color: var(--orange); }
+  .nav-logo-mark {
+    width: 32px; height: 32px;
+    background: var(--blue);
+    border-radius: 8px;
+    display: grid; place-items: center;
+    color: white;
+  }
+  .nav-back {
+    font-size: 14px;
+    color: var(--muted);
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .nav-back:hover { color: var(--orange); }
+
+  /* HEADER */
+  .doc-header {
+    background: var(--blue-deep);
+    color: white;
+    padding: 60px 5% 70px;
+    position: relative;
+    overflow: hidden;
+  }
+  .doc-header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+  }
+  .doc-header-inner {
+    max-width: 880px; margin: 0 auto;
+    position: relative; z-index: 1;
+  }
+  .doc-label {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 14px;
+    background: rgba(242,101,34,0.15);
+    border: 1px solid rgba(242,101,34,0.35);
+    border-radius: 100px;
+    font-size: 12px; font-weight: 600;
+    color: var(--orange-soft);
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    margin-bottom: 20px;
+  }
+  .doc-header h1 {
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 800; letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .doc-meta {
+    color: rgba(255,255,255,0.6); font-size: 14px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* CONTENT */
+  .doc-content {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 60px 5% 80px;
+  }
+  .doc-content h2 {
+    font-size: 24px; font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-top: 48px; margin-bottom: 16px;
+    color: var(--blue);
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--line);
+  }
+  .doc-content h2:first-child { margin-top: 0; }
+  .doc-content h3 {
+    font-size: 18px; font-weight: 700;
+    margin-top: 28px; margin-bottom: 12px;
+    color: var(--ink);
+  }
+  .doc-content p {
+    margin-bottom: 14px;
+    color: var(--ink);
+    font-size: 16px;
+  }
+  .doc-content ul, .doc-content ol {
+    margin: 14px 0 18px 28px;
+  }
+  .doc-content li {
+    margin-bottom: 8px;
+    color: var(--ink);
+    font-size: 16px;
+  }
+  .doc-content strong { color: var(--ink); font-weight: 700; }
+  .doc-content a {
+    color: var(--blue);
+    text-decoration: underline;
+    text-decoration-color: rgba(31,79,170,0.3);
+    text-underline-offset: 2px;
+  }
+  .doc-content a:hover { text-decoration-color: var(--blue); }
+
+  /* Callout */
+  .callout {
+    background: rgba(31,79,170,0.05);
+    border-left: 3px solid var(--blue);
+    padding: 16px 20px;
+    border-radius: 4px;
+    margin: 20px 0;
+    font-size: 15px;
+  }
+  .callout strong { color: var(--blue); }
+  .callout.warn {
+    background: rgba(242,101,34,0.08);
+    border-left-color: var(--orange);
+  }
+  .callout.warn strong { color: var(--orange); }
+
+  /* Requisites table */
+  .req-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 15px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+  }
+  .req-table td {
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--line);
+  }
+  .req-table tr:last-child td { border-bottom: none; }
+  .req-table td:first-child {
+    color: var(--muted);
+    width: 40%;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+  }
+  .req-table td:last-child { font-weight: 600; }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink); color: rgba(255,255,255,0.6);
+    padding: 36px 5% 28px;
+    border-top: 4px solid var(--orange);
+    font-size: 13px;
+  }
+  .footer-inner {
+    max-width: 1280px; margin: 0 auto;
+    display: flex; justify-content: space-between; flex-wrap: wrap;
+    gap: 16px;
+  }
+  .footer-legal-name { color: white; font-weight: 600; font-size: 14px; margin-bottom: 4px; }
+  .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+  .footer-links a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+  }
+  .footer-links a:hover { color: var(--orange); }
+
+  @media (max-width: 640px) {
+    .doc-header { padding: 40px 5% 50px; }
+    .doc-content { padding: 40px 5% 60px; }
+    .doc-content h2 { font-size: 20px; margin-top: 36px; }
+    .req-table td:first-child { width: 45%; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-mark">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+      </svg>
+    </div>
+    <span><span class="blue">Reanima</span><span class="orange">Tech</span></span>
+  </a>
+  <a href="/" class="nav-back">← на главную</a>
+</nav>
+
+<section class="doc-header">
+  <div class="doc-header-inner">
+    <div class="doc-label">договор-оферта</div>
+    <h1>Публичная оферта</h1>
+    <div class="doc-meta">Действует с 17 мая 2026 г. · ИП Сухарев Е. А. · Севастополь</div>
+  </div>
+</section>
+
+<main class="doc-content">
+
+<h2>1. Общие положения</h2>
+<p>Настоящий документ является публичной офертой (предложением) Индивидуального предпринимателя Сухарева Евгения Андреевича (далее — «Исполнитель») в соответствии со ст. 437 Гражданского кодекса РФ.</p>
+<p>Безусловным принятием (акцептом) условий настоящей оферты считается обращение клиента в сервисный центр ReanimaTech и подписание квитанции (заказ-наряда) на оказание услуг.</p>
+
+<div class="callout">
+  <strong>Реквизиты Исполнителя:</strong> ИП Сухарев Евгений Андреевич, ОГРНИП 324028000215682, ИНН 221002275096, адрес: г. Севастополь, ул. Хрусталёва, д. 89.
+</div>
+
+<h2>2. Предмет договора</h2>
+<p>Исполнитель оказывает Заказчику возмездные услуги по диагностике, ремонту, обслуживанию и модификации компьютерной, периферийной и бытовой электронной техники, а также по сборке персональных компьютеров и продаже комплектующих.</p>
+<p>Заказчик оплачивает услуги на условиях, согласованных в квитанции (заказ-наряде).</p>
+
+<h2>3. Порядок оказания услуг</h2>
+<h3>3.1. Приём техники</h3>
+<p>При сдаче техники в ремонт между Заказчиком и Исполнителем заключается договор бытового подряда, оформляемый в виде квитанции (заказ-наряда) в двух экземплярах. В квитанции указываются:</p>
+<ul>
+  <li>наименование и реквизиты Исполнителя;</li>
+  <li>фамилия, имя, отчество и контактные данные Заказчика;</li>
+  <li>наименование, описание и комплектация принимаемой техники;</li>
+  <li>заявленная неисправность;</li>
+  <li>стоимость услуг или порядок её определения;</li>
+  <li>сроки исполнения заказа;</li>
+  <li>гарантийные сроки;</li>
+  <li>подписи сторон.</li>
+</ul>
+
+<h3>3.2. Диагностика</h3>
+<p>Срок диагностики — от нескольких часов до одного рабочего дня в зависимости от сложности неисправности. Диагностика <strong>бесплатна при последующем заказе ремонта</strong> у Исполнителя. В случае отказа Заказчика от ремонта диагностика оплачивается по действующему прейскуранту.</p>
+
+<h3>3.3. Согласование работ и цены</h3>
+<p>После диагностики Исполнитель связывается с Заказчиком и сообщает результаты, перечень необходимых работ и итоговую стоимость. Работы начинаются только после явного согласия Заказчика.</p>
+
+<div class="callout warn">
+  <strong>Важно:</strong> если в ходе ремонта выявляются дополнительные неисправности, требующие увеличения объёма работ или стоимости, Исполнитель согласует это с Заказчиком до начала дополнительных работ.
+</div>
+
+<h3>3.4. Выдача техники</h3>
+<p>Техника выдаётся Заказчику лично или его представителю по доверенности при предъявлении квитанции о приёме и документа, удостоверяющего личность. При получении Заказчику рекомендуется проверить работоспособность техники в зоне обслуживания.</p>
+
+<h2>4. Стоимость услуг и порядок оплаты</h2>
+<p>Стоимость работ определяется в соответствии с действующим прейскурантом Исполнителя и фиксируется в квитанции (заказ-наряде) до начала работ.</p>
+<p>Способы оплаты:</p>
+<ul>
+  <li>наличными в кассе сервисного центра;</li>
+  <li>банковской картой;</li>
+  <li>по СБП (Системе быстрых платежей);</li>
+  <li>по реквизитам безналичным расчётом (для юридических лиц);</li>
+  <li>в рассрочку или кредит через банк-партнёр Т-Банк (программы «Долями», «Рассрочка», «Кредит») и МКК Айва.</li>
+</ul>
+<p><strong>Предоплата</strong> взимается только под заказные дорогие запчасти, которые покупаются специально под заказ Заказчика и не подлежат возврату поставщику.</p>
+
+<h2>5. Гарантийные обязательства</h2>
+<p>Исполнитель предоставляет гарантию на выполненные работы — <strong>90 дней</strong> с даты выдачи техники. На установленные комплектующие действует гарантия производителя, как правило 12 месяцев (конкретный срок указывается в акте выполненных работ).</p>
+<p>Подробные условия гарантии, перечень случаев гарантийного и негарантийного обслуживания изложены в документе <a href="/warranty.html">«Гарантийные обязательства»</a>, являющемся неотъемлемой частью настоящей оферты.</p>
+
+<h2>6. Хранение невостребованной техники</h2>
+<p>В случае, если Заказчик не явился за техникой в согласованный срок, Исполнитель обязан хранить её в течение <strong>2 месяцев</strong> со дня уведомления Заказчика о выполнении работ (п. 6 ст. 35 Закона «О защите прав потребителей»).</p>
+<p>По истечении указанного срока невостребованная техника может быть реализована в порядке, предусмотренном ст. 35 Закона «О защите прав потребителей» и ст. 738 Гражданского кодекса РФ. Вырученная от реализации сумма за вычетом расходов Исполнителя возвращается Заказчику.</p>
+
+<h2>7. Ответственность сторон</h2>
+<p>Исполнитель несёт ответственность за сохранность принятой в ремонт техники с момента её приёма и до момента выдачи. В случае утраты или повреждения техники по вине Исполнителя ущерб возмещается в полном объёме.</p>
+<p>Исполнитель не несёт ответственности за:</p>
+<ul>
+  <li>скрытые дефекты техники, которые не могли быть обнаружены при приёме без специального оборудования;</li>
+  <li>работоспособность программного обеспечения, не относящегося к предмету заказа;</li>
+  <li>сохранность данных пользователя на накопителях — Заказчику рекомендуется самостоятельно сделать резервную копию до сдачи техники в ремонт.</li>
+</ul>
+
+<h2>8. Защита персональных данных</h2>
+<p>Обработка персональных данных Заказчика осуществляется в соответствии с Федеральным законом № 152-ФЗ «О персональных данных» и <a href="/privacy.html">Политикой обработки персональных данных</a>, размещённой на сайте Исполнителя.</p>
+
+<h2>9. Заключительные положения</h2>
+<p>Все споры, возникающие из настоящего договора, разрешаются путём переговоров. При невозможности достижения соглашения споры передаются в суд по месту нахождения Исполнителя в соответствии с действующим законодательством РФ.</p>
+<p>Во всём остальном, что не предусмотрено настоящей офертой, стороны руководствуются законодательством РФ — Гражданским кодексом РФ, Законом «О защите прав потребителей», Правилами бытового обслуживания населения (ПП РФ от 21.09.2020 № 1514).</p>
+
+<h2>10. Реквизиты Исполнителя</h2>
+<table class="req-table">
+  <tr><td>Наименование</td><td>ИП Сухарев Евгений Андреевич</td></tr>
+  <tr><td>ОГРНИП</td><td>324028000215682</td></tr>
+  <tr><td>ИНН</td><td>221002275096</td></tr>
+  <tr><td>Адрес оказания услуг</td><td>г. Севастополь, ул. Хрусталёва, д. 89</td></tr>
+  <tr><td>Режим работы</td><td>Ежедневно, с 11:00 до 20:00</td></tr>
+  <tr><td>Телефон</td><td><a href="tel:+79789465199">+7 978 946-51-99</a></td></tr>
+  <tr><td>Электронная почта</td><td><a href="mailto:reanimatech@internet.ru">reanimatech@internet.ru</a></td></tr>
+  <tr><td>Сайт</td><td><a href="https://reanimatech.ru">reanimatech.ru</a></td></tr>
+</table>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-legal-name">ИП Сухарев Евгений Андреевич</div>
+      <div>ОГРНИП 324028000215682 · ИНН 221002275096</div>
+      <div>г. Севастополь, ул. Хрусталёва, д. 89</div>
+    </div>
+    <div class="footer-links">
+      <a href="/">На главную</a>
+      <a href="/privacy.html">Конфиденциальность</a>
+      <a href="/offer.html">Оферта</a>
+      <a href="/warranty.html">Гарантия</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

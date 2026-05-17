@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Политика конфиденциальности — ReanimaTech</title>
+<meta name="description" content="Политика конфиденциальности. Сервисный центр ReanimaTech, Севастополь.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #1F4FAA;
+    --blue-dark: #122F66;
+    --blue-deep: #0A1838;
+    --orange: #F26522;
+    --orange-soft: #FF8845;
+    --bg: #FAFAF7;
+    --ink: #0A0E1A;
+    --muted: #6B7280;
+    --line: #E5E7EB;
+    --card: #FFFFFF;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Manrope', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.65;
+  }
+
+  /* NAV — упрощённый */
+  nav {
+    position: sticky; top: 0;
+    padding: 14px 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(250, 250, 247, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+    z-index: 100;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 12px;
+    text-decoration: none;
+    font-weight: 800; font-size: 18px;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .nav-logo .blue { color: var(--blue); }
+  .nav-logo .orange { color: var(--orange); }
+  .nav-logo-mark {
+    width: 32px; height: 32px;
+    background: var(--blue);
+    border-radius: 8px;
+    display: grid; place-items: center;
+    color: white;
+  }
+  .nav-back {
+    font-size: 14px;
+    color: var(--muted);
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .nav-back:hover { color: var(--orange); }
+
+  /* HEADER */
+  .doc-header {
+    background: var(--blue-deep);
+    color: white;
+    padding: 60px 5% 70px;
+    position: relative;
+    overflow: hidden;
+  }
+  .doc-header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+  }
+  .doc-header-inner {
+    max-width: 880px; margin: 0 auto;
+    position: relative; z-index: 1;
+  }
+  .doc-label {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 14px;
+    background: rgba(242,101,34,0.15);
+    border: 1px solid rgba(242,101,34,0.35);
+    border-radius: 100px;
+    font-size: 12px; font-weight: 600;
+    color: var(--orange-soft);
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    margin-bottom: 20px;
+  }
+  .doc-header h1 {
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 800; letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 16px;
+  }
+  .doc-meta {
+    color: rgba(255,255,255,0.6); font-size: 14px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* CONTENT */
+  .doc-content {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 60px 5% 80px;
+  }
+  .doc-content h2 {
+    font-size: 24px; font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-top: 48px; margin-bottom: 16px;
+    color: var(--blue);
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--line);
+  }
+  .doc-content h2:first-child { margin-top: 0; }
+  .doc-content h3 {
+    font-size: 18px; font-weight: 700;
+    margin-top: 28px; margin-bottom: 12px;
+    color: var(--ink);
+  }
+  .doc-content p {
+    margin-bottom: 14px;
+    color: var(--ink);
+    font-size: 16px;
+  }
+  .doc-content ul, .doc-content ol {
+    margin: 14px 0 18px 28px;
+  }
+  .doc-content li {
+    margin-bottom: 8px;
+    color: var(--ink);
+    font-size: 16px;
+  }
+  .doc-content strong { color: var(--ink); font-weight: 700; }
+  .doc-content a {
+    color: var(--blue);
+    text-decoration: underline;
+    text-decoration-color: rgba(31,79,170,0.3);
+    text-underline-offset: 2px;
+  }
+  .doc-content a:hover { text-decoration-color: var(--blue); }
+
+  /* Callout */
+  .callout {
+    background: rgba(31,79,170,0.05);
+    border-left: 3px solid var(--blue);
+    padding: 16px 20px;
+    border-radius: 4px;
+    margin: 20px 0;
+    font-size: 15px;
+  }
+  .callout strong { color: var(--blue); }
+  .callout.warn {
+    background: rgba(242,101,34,0.08);
+    border-left-color: var(--orange);
+  }
+  .callout.warn strong { color: var(--orange); }
+
+  /* Requisites table */
+  .req-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 15px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+  }
+  .req-table td {
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--line);
+  }
+  .req-table tr:last-child td { border-bottom: none; }
+  .req-table td:first-child {
+    color: var(--muted);
+    width: 40%;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+  }
+  .req-table td:last-child { font-weight: 600; }
+
+  /* FOOTER */
+  footer {
+    background: var(--ink); color: rgba(255,255,255,0.6);
+    padding: 36px 5% 28px;
+    border-top: 4px solid var(--orange);
+    font-size: 13px;
+  }
+  .footer-inner {
+    max-width: 1280px; margin: 0 auto;
+    display: flex; justify-content: space-between; flex-wrap: wrap;
+    gap: 16px;
+  }
+  .footer-legal-name { color: white; font-weight: 600; font-size: 14px; margin-bottom: 4px; }
+  .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+  .footer-links a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+  }
+  .footer-links a:hover { color: var(--orange); }
+
+  @media (max-width: 640px) {
+    .doc-header { padding: 40px 5% 50px; }
+    .doc-content { padding: 40px 5% 60px; }
+    .doc-content h2 { font-size: 20px; margin-top: 36px; }
+    .req-table td:first-child { width: 45%; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-mark">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+      </svg>
+    </div>
+    <span><span class="blue">Reanima</span><span class="orange">Tech</span></span>
+  </a>
+  <a href="/" class="nav-back">← на главную</a>
+</nav>
+
+<section class="doc-header">
+  <div class="doc-header-inner">
+    <div class="doc-label">152-ФЗ</div>
+    <h1>Политика конфиденциальности</h1>
+    <div class="doc-meta">Действует с 17 мая 2026 г. · ИП Сухарев Е. А. · Севастополь</div>
+  </div>
+</section>
+
+<main class="doc-content">
+
+<h2>1. Общие положения</h2>
+<p>Настоящая Политика обработки персональных данных (далее — «Политика») разработана в соответствии с Федеральным законом от 27.07.2006 № 152-ФЗ «О персональных данных» и определяет порядок обработки персональных данных и меры по обеспечению их безопасности, предпринимаемые Индивидуальным предпринимателем Сухаревым Евгением Андреевичем (далее — «Оператор»).</p>
+<p>Оператор ставит своей важнейшей целью и условием осуществления своей деятельности соблюдение прав и свобод человека и гражданина при обработке его персональных данных, в том числе защиты прав на неприкосновенность частной жизни, личную и семейную тайну.</p>
+
+<div class="callout">
+  <strong>Реквизиты Оператора:</strong> ИП Сухарев Евгений Андреевич, ОГРНИП 324028000215682, ИНН 221002275096, адрес: г. Севастополь, ул. Хрусталёва, д. 89. Контакты: +7 978 946-51-99, reanimatech@internet.ru.
+</div>
+
+<h2>2. Основные понятия</h2>
+<ul>
+  <li><strong>Персональные данные</strong> — любая информация, относящаяся к прямо или косвенно определённому или определяемому физическому лицу (субъекту персональных данных).</li>
+  <li><strong>Обработка персональных данных</strong> — любое действие (операция) с персональными данными: сбор, запись, систематизация, накопление, хранение, уточнение, использование, передача, обезличивание, блокирование, удаление, уничтожение.</li>
+  <li><strong>Оператор</strong> — ИП Сухарев Е. А., самостоятельно организующий и осуществляющий обработку персональных данных.</li>
+  <li><strong>Пользователь</strong> — посетитель сайта reanimatech.ru или клиент сервисного центра, чьи персональные данные обрабатываются Оператором.</li>
+</ul>
+
+<h2>3. Какие данные мы обрабатываем</h2>
+<p>Оператор обрабатывает следующие категории персональных данных:</p>
+<ul>
+  <li>фамилия, имя, отчество;</li>
+  <li>контактный телефон;</li>
+  <li>адрес электронной почты;</li>
+  <li>адрес доставки или место выезда мастера (при необходимости);</li>
+  <li>сведения об устройстве, передаваемом в ремонт (модель, серийный номер, описание неисправности);</li>
+  <li>данные о платежах и заключённых договорах;</li>
+  <li>при оформлении рассрочки или кредита — данные, требуемые банком-партнёром или МКК.</li>
+</ul>
+<p>Сайт reanimatech.ru сам по себе не содержит форм сбора данных. Контакт с Оператором осуществляется по телефону, электронной почте или при личном обращении в сервисный центр. Технические данные посетителей сайта (IP-адрес, тип браузера, время визита) собираются автоматически системами аналитики, если такие используются, в обезличенном виде.</p>
+
+<h2>4. Цели обработки</h2>
+<p>Персональные данные обрабатываются в следующих целях:</p>
+<ul>
+  <li>заключение и исполнение договора оказания услуг (приём техники в ремонт, выдача после ремонта, гарантийное обслуживание);</li>
+  <li>идентификация клиента при обращении за гарантией;</li>
+  <li>информирование клиента о ходе выполнения работ;</li>
+  <li>оформление платёжных документов и закрывающих документов для юридических лиц;</li>
+  <li>передача данных банкам-партнёрам и МКК при оформлении рассрочки или кредита — с согласия клиента;</li>
+  <li>соблюдение требований законодательства РФ.</li>
+</ul>
+
+<h2>5. Правовые основания обработки</h2>
+<p>Обработка персональных данных осуществляется на следующих основаниях:</p>
+<ul>
+  <li>согласие субъекта персональных данных (при добровольном предоставлении данных при обращении);</li>
+  <li>исполнение договора, стороной которого является субъект персональных данных (договор оказания услуг по ремонту);</li>
+  <li>исполнение обязанностей, возложенных на Оператора законодательством РФ (налоговый учёт, защита прав потребителей).</li>
+</ul>
+
+<h2>6. Передача третьим лицам</h2>
+<p>Оператор не передаёт персональные данные третьим лицам, за исключением случаев:</p>
+<ul>
+  <li>передачи банкам-партнёрам и микрокредитным организациям при оформлении рассрочки или кредита по запросу клиента (Т-Банк, МКК Айва);</li>
+  <li>передачи в государственные органы по их законному требованию (налоговые органы, суд, правоохранительные органы);</li>
+  <li>передачи курьерским службам при отправке устройств после ремонта — только в объёме, необходимом для доставки.</li>
+</ul>
+
+<h2>7. Сроки обработки и хранения</h2>
+<p>Персональные данные хранятся не дольше, чем этого требуют цели их обработки. Сроки хранения:</p>
+<ul>
+  <li>сведения о заказе и контактные данные — в течение срока действия гарантии (90 дней + срок гарантии производителя), но не менее 1 года;</li>
+  <li>финансовые и бухгалтерские документы — в течение сроков, установленных налоговым законодательством (не менее 5 лет);</li>
+  <li>иные данные — до достижения целей обработки или до отзыва согласия субъектом.</li>
+</ul>
+
+<h2>8. Права субъекта персональных данных</h2>
+<p>Пользователь имеет право:</p>
+<ul>
+  <li>получать информацию об обработке своих персональных данных;</li>
+  <li>требовать уточнения, блокирования или уничтожения своих персональных данных, если они являются неполными, устаревшими, неточными или незаконно полученными;</li>
+  <li>отозвать своё согласие на обработку персональных данных;</li>
+  <li>обжаловать действия или бездействие Оператора в уполномоченный орган по защите прав субъектов персональных данных (Роскомнадзор) или в судебном порядке.</li>
+</ul>
+
+<h2>9. Меры безопасности</h2>
+<p>Оператор принимает необходимые правовые, организационные и технические меры для защиты персональных данных от неправомерного или случайного доступа, уничтожения, изменения, блокирования, копирования, распространения, а также от иных неправомерных действий третьих лиц.</p>
+
+<h2>10. Изменение Политики</h2>
+<p>Оператор имеет право вносить изменения в настоящую Политику. Актуальная редакция всегда доступна по адресу <a href="https://reanimatech.ru/privacy.html">reanimatech.ru/privacy.html</a>. Дата последнего обновления указана в начале документа.</p>
+
+<h2>11. Контакты</h2>
+<p>По всем вопросам, связанным с обработкой персональных данных, можно обратиться к Оператору:</p>
+<table class="req-table">
+  <tr><td>Телефон</td><td><a href="tel:+79789465199">+7 978 946-51-99</a></td></tr>
+  <tr><td>Электронная почта</td><td><a href="mailto:reanimatech@internet.ru">reanimatech@internet.ru</a></td></tr>
+  <tr><td>Адрес</td><td>г. Севастополь, ул. Хрусталёва, д. 89</td></tr>
+</table>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-legal-name">ИП Сухарев Евгений Андреевич</div>
+      <div>ОГРНИП 324028000215682 · ИНН 221002275096</div>
+      <div>г. Севастополь, ул. Хрусталёва, д. 89</div>
+    </div>
+    <div class="footer-links">
+      <a href="/">На главную</a>
+      <a href="/privacy.html">Конфиденциальность</a>
+      <a href="/offer.html">Оферта</a>
+      <a href="/warranty.html">Гарантия</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
