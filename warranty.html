@@ -321,13 +321,19 @@
 </div>
 <script>
 (function(){
-  var METRIKA_ID = null; /* сюда номер счётчика Яндекс.Метрики */
+  var METRIKA_ID = 110557856;
   function get(){var m=document.cookie.match(/(?:^|; )ck_consent=([^;]+)/);return m?m[1]:null}
   function set(v){var d=new Date();d.setFullYear(d.getFullYear()+1);document.cookie="ck_consent="+v+"; expires="+d.toUTCString()+"; path=/; SameSite=Lax"}
   function metrika(){
     if(!METRIKA_ID) return;
     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
-    ym(METRIKA_ID,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true});
+    ym(METRIKA_ID,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});
+    document.addEventListener("click",function(e){
+      var a=e.target.closest&&e.target.closest("a");if(!a)return;
+      var h=a.getAttribute("href")||"";
+      if(h.indexOf("tel:")===0){ym(METRIKA_ID,"reachGoal","phone_click")}
+      else if(h.indexOf("vk.ru")>-1||h.indexOf("vk.com")>-1){ym(METRIKA_ID,"reachGoal","vk_click")}
+    },true);
   }
   var c=get(), box=document.getElementById("ck");
   if(c==="yes"){metrika()}
