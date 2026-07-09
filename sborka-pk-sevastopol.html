@@ -262,6 +262,7 @@ footer{background:var(--blue-deep);color:rgba(255,255,255,0.5);padding:32px 5%;f
       var h=a.getAttribute("href")||"";
       if(h.indexOf("tel:")===0){ym(METRIKA_ID,"reachGoal","phone_click")}
       else if(h.indexOf("vk.ru")>-1||h.indexOf("vk.com")>-1){ym(METRIKA_ID,"reachGoal","vk_click")}
+      else if(h.indexOf("max.ru")>-1){ym(METRIKA_ID,"reachGoal","max_click")}
     },true);
   }
   var c=get(), box=document.getElementById("ck");
