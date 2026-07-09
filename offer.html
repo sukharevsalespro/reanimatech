@@ -40,22 +40,8 @@
     border-bottom: 1px solid var(--line);
     z-index: 100;
   }
-  .nav-logo {
-    display: flex; align-items: center; gap: 12px;
-    text-decoration: none;
-    font-weight: 800; font-size: 18px;
-    letter-spacing: -0.02em;
-    color: var(--ink);
-  }
-  .nav-logo .blue { color: var(--blue); }
-  .nav-logo .orange { color: var(--orange); }
-  .nav-logo-mark {
-    width: 32px; height: 32px;
-    background: var(--blue);
-    border-radius: 8px;
-    display: grid; place-items: center;
-    color: white;
-  }
+  .nav-logo { display: flex; align-items: center; height: 40px; text-decoration: none; }
+  .nav-logo img { height: 100%; width: auto; display: block; }
   .nav-back {
     font-size: 14px;
     color: var(--muted);
@@ -222,12 +208,7 @@
 
 <nav>
   <a href="/" class="nav-logo">
-    <div class="nav-logo-mark">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-      </svg>
-    </div>
-    <span><span class="blue">Reanima</span><span class="orange">Tech</span></span>
+    <img src="/logo.webp" alt="ReanimaTech">
   </a>
   <a href="/" class="nav-back">← на главную</a>
 </nav>
@@ -346,6 +327,31 @@
     </div>
   </div>
 </footer>
+
+<div id="ck" style="position:fixed;left:14px;bottom:14px;z-index:999;max-width:360px;background:#fff;border:1px solid #e3e6ec;border-radius:16px;padding:18px;box-shadow:0 16px 40px -14px rgba(20,40,80,.25);font-size:13.5px;line-height:1.5;display:none">
+  <p style="margin:0 0 12px"><b>Мы используем cookie</b> для работы сайта и анализа посещаемости. Подробнее — в <a href="/privacy.html" style="color:#2563eb">политике конфиденциальности</a>.</p>
+  <div style="display:flex;gap:8px">
+    <button id="ck-yes" style="flex:1;background:#2563eb;color:#fff;border:0;border-radius:100px;padding:10px 16px;font-weight:600;font-size:13.5px;cursor:pointer">Принять</button>
+    <button id="ck-no" style="background:none;border:1.5px solid #e3e6ec;border-radius:100px;padding:10px 16px;font-weight:600;font-size:13.5px;color:#667;cursor:pointer">Отклонить</button>
+  </div>
+</div>
+<script>
+(function(){
+  var METRIKA_ID = null; /* сюда номер счётчика Яндекс.Метрики */
+  function get(){var m=document.cookie.match(/(?:^|; )ck_consent=([^;]+)/);return m?m[1]:null}
+  function set(v){var d=new Date();d.setFullYear(d.getFullYear()+1);document.cookie="ck_consent="+v+"; expires="+d.toUTCString()+"; path=/; SameSite=Lax"}
+  function metrika(){
+    if(!METRIKA_ID) return;
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+    ym(METRIKA_ID,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true});
+  }
+  var c=get(), box=document.getElementById("ck");
+  if(c==="yes"){metrika()}
+  else if(!c){setTimeout(function(){box.style.display="block"},1200)}
+  document.getElementById("ck-yes").onclick=function(){set("yes");box.style.display="none";metrika()};
+  document.getElementById("ck-no").onclick=function(){set("no");box.style.display="none"};
+})();
+</script>
 
 </body>
 </html>
